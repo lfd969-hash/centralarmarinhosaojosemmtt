@@ -1,448 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head> <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18369361261"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18369361261');
-</script> 
-
-  <!-- Event snippet for Visualização de página conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18369361261/SY1YCNHu494cEO3qmLdE',
-      'value': 1.0,
-      'currency': 'BRL'
-  });
-</script>
-
-  <!-- Event snippet for Visualização de página conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18369361261/SY1YCNHu494cEO3qmLdE',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armarinho São José | D S J - Londrina Armarinhos Ltda.</title>
-    <meta name="description" content="Sua loja completa em aviamentos, fios, crochê, tricô, tecidos e artesanato em Londrina - PR. Tradição e qualidade desde 2002.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#fff1f2',
-                            100: '#ffe4e6',
-                            500: '#e11d48',
-                            600: '#e11d48',
-                            700: '#be123c',
-                            900: '#881337',
-                        },
-                        dark: {
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-    </style>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catálogo Armarinho São José · Londrina – PR</title>
+<meta name="description" content="Catálogo de armarinhos em geral. Monte seu pedido e finalize pelo WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="htt...ap" rel="stylesheet" />
+<style>
+  :root{--bg:#FAF7F2;--ink:#1C1917;--muted:#57534E;--line:#E7E0D3;--line2:#D6CEBF;--acc:#9A3412;--gold:#FDBA74;--wa:#15803D;--cream:#F5EDE0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+  .serif{font-family:'Lora',serif}
+  .top{background:#292524;color:#D6D3D1;font-size:12px;padding:10px 0}
+  .top b{color:#fff}.top span{color:var(--gold)}
+  header{position:sticky;top:0;z-index:40;background:rgba(250,247,242,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  header .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo i{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-style:normal}
+  .logo strong{display:block;font-family:'Lora',serif;font-size:20px}
+  .logo small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#78350F}
+  nav{display:flex;gap:32px;font-size:14px;color:var(--muted)} nav a:hover{color:var(--acc)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:500;font-size:14px;transition:background-color .2s,transform .2s}
+  .btn:hover{background:var(--acc)} .btn:active{transform:scale(.96)}
+  .btn.wa{background:var(--wa);color:#fff;width:100%;height:48px}.btn.wa:hover{background:#166534}
+  .btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line2)}
+  .badge{min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:12px;font-weight:700;display:grid;place-items:center}
+  .hero{background:radial-gradient(circle at top right,var(--cream),var(--bg) 70%)}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px}
+  .chip{display:inline-block;border:1px solid var(--line2);background:rgba(255,255,255,.7);border-radius:999px;padding:4px 12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#78350F;font-weight:600}
+  h1{font-family:'Lora',serif;font-size:clamp(36px,5vw,56px);line-height:1.05;margin-top:24px;letter-spacing:-.01em}
+  h1 em{color:var(--acc)}
+  .hero p{margin-top:24px;font-size:18px;color:var(--muted);max-width:560px}
+  .hero .ctas{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:32px;box-shadow:0 30px 60px -30px rgba(28,25,23,.5)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:72px}
+  .steps div{background:var(--bg);padding:28px}.steps code{color:var(--acc);font-size:12px}
+  .steps h3{font-family:'Lora',serif;font-size:20px;margin-top:6px}.steps p{font-size:14px;color:var(--muted);margin-top:6px}
+  .cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:64px;flex-wrap:wrap}
+  .over{text-transform:uppercase;font-size:12px;letter-spacing:.2em;font-weight:600;color:#78350F}
+  h2{font-family:'Lora',serif;font-size:36px;margin-top:6px}
+  .search{height:44px;width:320px;max-width:100%;border-radius:999px;border:1px solid var(--line2);padding:0 18px;font:inherit;outline:none}
+  .search:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(154,52,18,.1)}
+  .pills{position:sticky;top:72px;z-index:30;background:rgba(250,247,242,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:12px 0;margin-top:24px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .pill{flex-shrink:0;height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px;transition:background-color .2s,color .2s}
+  .pill.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:32px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(28,25,23,.35)}
+  .card .img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--cream)}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform .7s}.card:hover img{transform:scale(1.05)}
+  .card .tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.9);border-radius:999px;padding:4px 12px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);font-weight:600}
+  .card .body{padding:20px;display:flex;flex-direction:column;flex:1}
+  .sku{font-family:monospace;font-size:11px;color:#a8a29e}
+  .card h4{font-family:'Lora',serif;font-size:18px;line-height:1.3;margin-top:4px}
+  .card .d{font-size:14px;color:var(--muted);margin-top:8px}.card .s{font-size:12px;color:#78716c;margin-top:8px}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:16px}
+  .sob{background:#FEF3C7;color:#78350F;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600}
+  .qty{display:inline-flex;align-items:center;border:1px solid var(--line2);border-radius:999px;background:#fff}
+  .qty button{width:32px;height:32px;border-radius:50%}.qty button:hover{background:var(--cream)}
+  .qty span{width:32px;text-align:center;font-weight:600;font-size:14px}
+  .card .btn{margin-top:16px}
+  footer{background:var(--ink);color:#D6D3D1;margin-top:96px}
+  footer .cols{display:grid;grid-template-columns:5fr 4fr 3fr;gap:48px;padding:64px 24px 40px}
+  footer .t{font-family:'Lora',serif;font-size:30px;color:var(--bg)}
+  footer h5{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:12px;margin-bottom:14px}
+  footer p,footer a{font-size:14px;color:#A8A29E;display:block;margin-bottom:8px}footer a:hover{color:var(--gold)}
+  .legal{border-top:1px solid #292524;padding:20px 24px;font-size:12px;color:#78716C;display:flex;gap:24px;flex-wrap:wrap}
+  .fab{position:fixed;right:24px;bottom:24px;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 25px rgba(0,0,0,.2);z-index:40;transition:transform .2s}.fab:hover{transform:scale(1.1)}
+  .overlay{position:fixed;inset:0;background:rgba(28,25,23,.45);z-index:50;opacity:0;pointer-events:none;transition:opacity .3s}
+  .overlay.show{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:100%;background:#fff;z-index:60;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+  .drawer.show{transform:none}
+  .drawer .hd,.drawer .ft{padding:24px;border-bottom:1px solid var(--line)}.drawer .ft{border-top:1px solid var(--line);border-bottom:0;background:var(--bg)}
+  .drawer .items{flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:12px}
+  .ci{display:flex;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .ci img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+  .ci .n{font-size:14px;font-weight:500}.ci .x{color:#a8a29e;font-size:13px}.ci .x:hover{color:#b91c1c}
+  .modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-48%);opacity:0;pointer-events:none;width:520px;max-width:calc(100% - 32px);max-height:92vh;overflow-y:auto;background:#fff;border-radius:20px;padding:28px;z-index:70;transition:opacity .25s,transform .25s}
+  .modal.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+  label{display:block;font-size:14px;font-weight:500;margin:14px 0 6px}
+  .f{width:100%;border:1px solid var(--line2);border-radius:10px;padding:10px 12px;font:inherit;outline:none}.f:focus{border-color:var(--acc)}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .seg button{height:44px;border-radius:12px;border:1px solid var(--line2);font-weight:500;font-size:14px}
+  .seg button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-size:14px;z-index:80;transition:transform .3s}
+  .toast.show{transform:translate(-50%,0)}
+  @media(max-width:900px){.hero .wrap,footer .cols{grid-template-columns:1fr}nav{display:none}.steps{grid-template-columns:1fr}}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body id="top">
 
-    <!-- Top Bar -->
-    <div class="bg-dark-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-6">
-                <span><i class="fa-solid fa-building text-brand-500 mr-2"></i>CNPJ: 04.985.778/0001-58</span>
-                <span class="hidden sm:inline"><i class="fa-solid fa-certificate text-brand-500 mr-2"></i>I.E. PR: 90256440-31</span>
-                <span class="hidden md:inline"><i class="fa-solid fa-[#00A859] fa-circle-check text-emerald-400 mr-1.5"></i>Situação Cadastral: Ativa</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="tel:4333716400" class="hover:text-white transition-colors"><i class="fa-solid fa-phone text-brand-500 mr-1.5"></i>(43) 3371-6400</a>
-                <span>|</span>
-                <a href="mailto:financeiro@armarinhosaojose.com.br" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope text-brand-500 mr-1.5"></i>financeiro@armarinhosaojose.com.br</a>
-            </div>
-        </div>
-    </div>
+<div class="top"><div class="wrap">🛡️ <b>Projeto independente</b> de catálogo digital, apoiado por <span>D S J - Londrina Armarinhos Ltda.</span> (Armarinho São José) · CNPJ 04.985.778/0001-58 · IE PR 90256440-31</div></div>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-11 h-11 bg-gradient-to-tr from-brand-600 to-rose-400 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-md shadow-brand-500/20">
-                    <i class="fa-solid fa-scissors"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-extrabold text-slate-900 tracking-tight leading-none">Armarinho São José</h1>
-                    <span class="text-xs text-slate-500 font-medium">D S J - Londrina Armarinhos Ltda.</span>
-                </div>
-            </div>
+<header><div class="wrap">
+  <a href="#top" class="logo"><i>✂</i><span><strong>Armarinho São José</strong><small>Catálogo de Aviamentos</small></span></a>
+  <nav><a href="#catalogo">Catálogo</a><a href="#como">Como funciona</a><a href="#contato">Contato</a></nav>
+  <button class="btn" onclick="openCart()">🛍️ Meu pedido <span class="badge" id="count">0</span></button>
+</div></header>
 
-            <!-- Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                <a href="#inicio" class="hover:text-brand-600 transition-colors">Início</a>
-                <a href="#servicos" class="hover:text-brand-600 transition-colors">Serviços e Produtos</a>
-                <a href="#institucional" class="hover:text-brand-600 transition-colors">Dados Jurídicos</a>
-                <a href="#contato" class="hover:text-brand-600 transition-colors">Localização</a>
-            </nav>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="chip">✦ Armarinhos em geral · Londrina – PR</span>
+    <h1>A arte dos <em>aviamentos</em>, linhas e fios para a sua criação.</h1>
+    <p>Monte seu pedido com calma, escolha retirada ou entrega e finalize direto no WhatsApp. Os valores são informados pela loja no orçamento.</p>
+    <div class="ctas"><a href="#catalogo" class="btn">Ver catálogo</a><a class="btn ghost" target="_blank" href="https://wa.me/554333716400">💬 (43) 3371-6400</a></div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1550376026-7375b92bb318?fm=jpg&w=1200&q=80" alt="Novelos e fios" />
+</div></section>
 
-            <a href="https://wa.me/554333716400" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-600/20 transition-all hover:scale-[1.02]">
-                <i class="fa-brands fa-whatsapp text-lg"></i>
-                <span>Falar no WhatsApp</span>
-            </a>
-        </div>
-    </header>
+<div class="wrap">
+  <div class="steps" id="como">
+    <div><code>01</code><h3>Escolha</h3><p>Navegue pelas categorias e adicione os itens com a quantidade desejada.</p></div>
+    <div><code>02</code><h3>Informe</h3><p>Nome, telefone, retirada ou entrega e forma de pagamento.</p></div>
+    <div><code>03</code><h3>Finalize</h3><p>O pedido segue pronto para o WhatsApp — a loja retorna com o orçamento.</p></div>
+  </div>
+  <div class="cat-head" id="catalogo">
+    <div><div class="over">Catálogo</div><h2>Produtos de armarinho</h2></div>
+    <input class="search" id="q" placeholder="🔍 Buscar linha, botão, zíper…" oninput="render()" />
+  </div>
+  <div class="pills" id="pills"></div>
+  <div class="grid" id="grid"></div>
+</div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-dark-800 to-slate-900 text-white py-24 lg:py-32">
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293712_1px,transparent_1px),linear-gradient(to_bottom,#1f293712_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold uppercase tracking-wider">
-                        <i class="fa-solid fa-award"></i> Tradição Desde 2002 • Londrina - PR
-                    </div>
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        A maior variedade em <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-brand-500">armarinhos e aviamentos</span>
-                    </h2>
-                    <p class="text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
-                        Há mais de 24 anos fornecendo soluções completas em tecidos, fios, ferramentas de costura, bordado e artesanato com excelência no atendimento no atacado e varejo.
-                    </p>
-                    
-                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#servicos" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all text-center">
-                            Conhecer Produtos
-                        </a>
-                        <a href="#contato" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-8 py-3.5 rounded-xl transition-all text-center">
-                            Informações de Contato
-                        </a>
-                    </div>
+<footer id="contato">
+  <div class="wrap cols">
+    <div><div class="t">Armarinho São José</div><p style="margin-top:16px">Linhas, fitas, botões, zíperes, rendas e aviamentos em geral. Monte seu pedido e finalize pelo WhatsApp.</p><p style="font-size:12px;color:#78716C">Este catálogo é um projeto independente, apoiado pela empresa abaixo identificada.</p></div>
+    <div><h5>Localização</h5><p>📍 Avenida Rio Branco, 70<br/>Bairro Centro<br/>CEP 86070-010<br/>Londrina – PR</p><a href="tel:+554333716400">📞 (43) 3371-6400 (Ligar)</a><a href="mailto:financeiro@armarinhosaojose.com.br">✉️ financeiro@armarinhosaojose.com.br</a></div>
+    <div><h5>Para correspondência</h5><p>Armarinho Sao Jose<br/>D S J - Londrina Armarinhos Ltda.<br/>Avenida Rio Branco 70<br/>Centro<br/>Londrina PR<br/>86070-010</p></div>
+  </div>
+  <div class="wrap legal"><span>Razão Social: D S J - Londrina Armarinhos Ltda.</span><span>Nome Fantasia: Armarinho Sao Jose</span><span>CNPJ: 04.985.778/0001-58 – 04985778000158</span><span>Inscrição Estadual PR: 90256440-31</span></div>
+</footer>
 
-                    <!-- Trust Stats -->
-                    <div class="pt-10 grid grid-cols-3 gap-6 border-t border-slate-800">
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-bold text-white">24+ Anos</div>
-                            <div class="text-xs text-slate-400">De História no Mercado</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-bold text-white">Ativa</div>
-                            <div class="text-xs text-slate-400">Situação Cadastral</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-bold text-white">Pronta Entrega</div>
-                            <div class="text-xs text-slate-400">Atacado & Varejo</div>
-                        </div>
-                    </div>
-                </div>
+<a class="fab" target="_blank" href="https://wa.me/554333716400" aria-label="WhatsApp">💬</a>
 
-                <!-- Corporate Summary Card -->
-                <div class="lg:col-span-5">
-                    <div class="glass-card rounded-2xl p-6 sm:p-8 text-slate-800 shadow-2xl relative">
-                        <div class="flex items-center justify-between pb-6 border-b border-slate-200">
-                            <div>
-                                <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Razão Social</span>
-                                <h3 class="text-lg font-bold text-slate-900">D S J - Londrina Armarinhos Ltda.</h3>
-                            </div>
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Matriz</span>
-                        </div>
+<div class="overlay" id="ov" onclick="closeAll()"></div>
+<aside class="drawer" id="drawer">
+  <div class="hd"><h3 class="serif" style="font-size:24px">Meu pedido</h3><p style="font-size:14px;color:var(--muted)">Preços sob consulta — finalize pelo WhatsApp.</p></div>
+  <div class="items" id="items"></div>
+  <div class="ft"><p style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:16px"><span>Itens</span><b id="units">0 unidade(s)</b></p><button class="btn wa" onclick="openCheckout()">Finalizar pedido no WhatsApp</button></div>
+</aside>
 
-                        <div class="py-6 space-y-4 text-sm">
-                            <div class="flex justify-between items-center py-1 border-b border-slate-100">
-                                <span class="text-slate-500">Nome Fantasia</span>
-                                <span class="font-semibold text-slate-900">Armarinho São José</span>
-                            </div>
-                            <div class="flex justify-between items-center py-1 border-b border-slate-100">
-                                <span class="text-slate-500">CNPJ</span>
-                                <span class="font-mono font-semibold text-slate-900">04.985.778/0001-58</span>
-                            </div>
-                            <div class="flex justify-between items-center py-1 border-b border-slate-100">
-                                <span class="text-slate-500">Inscrição Estadual</span>
-                                <span class="font-mono font-semibold text-slate-900">90256440-31</span>
-                            </div>
-                            <div class="flex justify-between items-center py-1 border-b border-slate-100">
-                                <span class="text-slate-500">Data de Abertura</span>
-                                <span class="font-semibold text-slate-900">08/04/2002</span>
-                            </div>
-                            <div class="flex justify-between items-center py-1 border-b border-slate-100">
-                                <span class="text-slate-500">Capital Social</span>
-                                <span class="font-semibold text-slate-900">R$ 660.000,00</span>
-                            </div>
-                            <div class="flex justify-between items-center py-1">
-                                <span class="text-slate-500">Natureza Jurídica</span>
-                                <span class="font-semibold text-slate-900 text-right">Sociedade Empresária Ltda.</span>
-                            </div>
-                        </div>
+<form class="modal" id="modal" onsubmit="sendOrder(event)">
+  <h3 class="serif" style="font-size:24px">Finalizar pedido</h3>
+  <p style="font-size:14px;color:var(--muted)">Seus dados seguem junto do pedido para o WhatsApp.</p>
+  <label>Nome completo</label><input class="f" id="nome" required minlength="2" />
+  <label>Telefone / WhatsApp</label><input class="f" id="tel" type="tel" required placeholder="(43) 99999-9999" />
+  <label>Recebimento</label>
+  <div class="seg"><button type="button" id="b-ret" class="on" onclick="setEnt('retirada')">Retirar na loja</button><button type="button" id="b-ent" onclick="setEnt('entrega')">Entrega</button></div>
+  <div id="endBox" style="display:none"><label>Endereço de entrega</label><textarea class="f" id="end" rows="2" placeholder="Rua, nº, bairro, CEP, cidade"></textarea></div>
+  <label>Forma de pagamento</label>
+  <select class="f" id="pag"><option>PIX</option><option>Cartão de Crédito</option><option>Cartão de Débito</option><option>Dinheiro</option><option>Boleto Bancário</option></select>
+  <label>Observações (cores, metragem…)</label><textarea class="f" id="obs" rows="2"></textarea>
+  <button class="btn wa" style="margin-top:20px" type="submit">Enviar pedido pelo WhatsApp</button>
+</form>
 
-                        <div class="pt-4">
-                            <a href="tel:4333716400" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors text-sm">
-                                <i class="fa-solid fa-phone"></i> Ligar para (43) 3371-6400
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="toast" id="toast"></div>
 
-    <!-- Services & Products Section -->
-    <section id="servicos" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">O que oferecemos</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Principais Linhas de Produtos & Serviços</h2>
-                <p class="text-slate-600 mt-4">Atendendo artesãos, confecções, estilistas e apaixonados por trabalhos manuais em todo o Paraná e Brasil.</p>
-            </div>
+<script>
+const WA = "554333716400";
+const I = {
+  linhas:"https://images.unsplash.com/photo-1542044801-30d3e45ae49a?fm=jpg&w=800&q=80",
+  bordado:"https://images.unsplash.com/photo-1622164187693-91da7b2cbb44?fm=jpg&w=800&q=80",
+  botoes:"https://images.unsplash.com/photo-1762960137224-8b1eab363075?fm=jpg&w=800&q=80",
+  avi:"https://images.unsplash.com/photo-1578353022142-09264fd64295?fm=jpg&w=800&q=80",
+  las:"https://images.unsplash.com/photo-1632649027900-389e810204e6?fm=jpg&w=800&q=80",
+  atelier:"https://images.unsplash.com/photo-1550376026-7375b92bb318?fm=jpg&w=800&q=80"
+};
+const P = [
+  ["p1","Linha de Costura Poliéster 120 (91,4m)","Linhas","Alta resistência e acabamento acetinado para costura reta e overloque.",I.linhas,"LNH-120-POL","100% Poliéster • 60+ cores"],
+  ["p2","Linha Mouliné para Bordado","Linhas","6 fios divisíveis, alto brilho para ponto cruz e bordado livre.",I.bordado,"LNH-BRD-MLN","Algodão mercerizado • Meada 8m"],
+  ["p3","Fita de Cetim Nº 5 (22mm x 50m)","Fitas","Brilho intenso e toque macio para laços, embalagens e acabamentos.",I.bordado,"FIT-CET-N5","22mm • Rolo 50m"],
+  ["p4","Fita Gorgurão Nº 9 (38mm x 10m)","Fitas","Nervuras firmes, ideal para laços de cabelo, tiaras e artesanato.",I.avi,"FIT-GOR-N9","Poliéster • Rolo 10m"],
+  ["p5","Botões 4 Furos Resina (c/ 50un)","Botões","Acabamento semi-fosco para camisaria, alfaiataria e casacos.",I.botoes,"BOT-RES-50","18mm / 22mm • Cores variadas"],
+  ["p6","Botões Infantis Formatos Sortidos","Botões","Formatos lúdicos para roupinhas de bebê, patchwork e scrapbooking.",I.botoes,"BOT-INF-DIV","Pacote 30un • Atóxico"],
+  ["p7","Zíper de Metal Destacável Ouro Velho","Zíperes","Dentes metálicos resistentes para jaquetas, bolsas e mochilas.",I.avi,"ZIP-MET-OVR","60cm a 80cm"],
+  ["p8","Zíper Invisível (20cm a 50cm)","Zíperes","Mola de nylon ultrafina que se oculta na costura de vestidos e saias.",I.avi,"ZIP-INV-NYL","Espiral nº 3"],
+  ["p9","Elástico Chato Reforçado (25mm x 25m)","Elásticos","Excelente memória de tração para cós de calças, shorts e bermudas.",I.avi,"ELA-JAR-25","Poliéster / Elastodieno"],
+  ["p10","Renda Guipure Floral (13,7m)","Rendas","Bordado denso com relevo marcante para toalhas, lingeries e vestidos.",I.bordado,"REN-GUI-FLR","6,5cm • Poliéster"],
+  ["p11","Tesoura de Alfaiate Forjada 9,5\"","Tesouras","Aço carbono com fio navalha para corte preciso de tecidos pesados.",I.avi,"TES-ALF-FOR","Aço carbono temperado"],
+  ["p12","Novelo de Lã Acrílica (100g / 200m)","Lãs","Toque aveludado, perfeita para casacos, mantas, cachecóis e gorros.",I.las,"LAS-CLA-100","Agulhas 4–6mm"],
+  ["p13","Kit Agulhas de Crochê Ergonômicas","Agulhas","8 numerações (2,0mm a 6,0mm) com ponta de alumínio polido.",I.las,"AGU-CRC-ERG","Cabo soft touch • Estojo"],
+  ["p14","Kit Aviamentos Essenciais","Aviamentos","Fita métrica, passador de linha, desmanchador, alfinetes e dedal.",I.atelier,"AVI-KIT-ESS","12 acessórios"]
+].map(([id,name,cat,desc,img,sku,specs])=>({id,name,cat,desc,img,sku,specs}));
+const CATS = ["Todos","Linhas","Fitas","Botões","Zíperes","Elásticos","Rendas","Tesouras","Lãs","Agulhas","Aviamentos"];
+let cat = "Todos", ent = "retirada";
+let cart = JSON.parse(localStorage.getItem("asj-cart") || "{}");
+const qtys = {};
+const $ = id => document.getElementById(id);
+const save = () => { localStorage.setItem("asj-cart", JSON.stringify(cart)); renderCart(); };
+const toast = m => { const t=$("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2200); };
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-12 h-12 bg-rose-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-scissors"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Aviamentos & Costura</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Linhas, zíperes, botões, fitas, elásticos, agulhas e todos os suprimentos essenciais para confecção profissional e reparos.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-12 h-12 bg-rose-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-[#00A859] fa-scroll"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Crochê & Tricô</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Catálogo completo de fios, barbantes, lãs e agulhas especializadas das marcas mais renomadas do mercado artesanal.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-12 h-12 bg-rose-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-palette"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Materiais para Artesanato</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Tintas para tecido, colas especiais, bastidores, fita métrica, tesouras de precisão e itens para patchwork e bordado.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-12 h-12 bg-rose-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-boxes-packing"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Venda Atacado & Varejo</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Condições especiais para ateliês, indústrias têxteis e comércios parceiros, além de atendimento personalizado para consumo próprio.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-12 h-12 bg-rose-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Atendimento & Logística</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Suporte corporativo dedicado para cotações financeiras, faturamento via CNPJ e envio ágil de pedidos.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-12 h-12 bg-rose-100 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-store"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Loja Física Tradicional</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Estrutura física no centro de Londrina com amplo acervo à pronta entrega e equipe especializada para orientar suas compras.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detailed Legal & Corporate Info Section -->
-    <section id="institucional" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Transparência & Registro</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Ficha Cadastral da Empresa</h2>
-                <p class="text-slate-600 mt-2">Informações oficiais de registro da D S J - Londrina Armarinhos Ltda.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">CNPJ</div>
-                    <div class="text-base font-bold font-mono text-slate-900">04.985.778/0001-58</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Inscrição Estadual PR</div>
-                    <div class="text-base font-bold font-mono text-slate-900">90256440-31</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Data de Abertura</div>
-                    <div class="text-base font-bold text-slate-900">08/04/2002</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Situação Cadastral</div>
-                    <div class="text-base font-bold text-emerald-600">Ativa (Desde 05/06/2004)</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Porte</div>
-                    <div class="text-base font-bold text-slate-900">Sem Enquadramento</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Natureza Jurídica</div>
-                    <div class="text-base font-bold text-slate-900">Sociedade Empresária Limitada</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Opção pelo Simples</div>
-                    <div class="text-base font-bold text-slate-900">Não</div>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Capital Social</div>
-                    <div class="text-base font-bold text-slate-900">R$ 660.000,00</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Contact Section -->
-    <section id="contato" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12">
-                <!-- Contact Details -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Canais de Atendimento</span>
-                        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Entre em Contato Conosco</h2>
-                        <p class="text-slate-600 mt-3">Estamos à disposição para dúvidas, orçamentos corporativos e informações de estoque.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <div class="w-10 h-10 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center font-bold shrink-0 mt-1">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Endereço da Loja</h4>
-                                <p class="text-sm text-slate-600 mt-1">
-                                    Avenida Rio Branco, nº 70 — Centro<br>
-                                    CEP: 86070-010 • Londrina - Paraná
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <div class="w-10 h-10 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center font-bold shrink-0 mt-1">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Telefone Principal</h4>
-                                <a href="tel:4333716400" class="text-sm text-brand-600 font-semibold hover:underline block mt-1">
-                                    (43) 3371-6400
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <div class="w-10 h-10 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center font-bold shrink-0 mt-1">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">E-mail Financeiro & Comercial</h4>
-                                <a href="mailto:financeiro@armarinhosaojose.com.br" class="text-sm text-brand-600 font-semibold hover:underline block mt-1">
-                                    financeiro@armarinhosaojose.com.br
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mailing Address & Interactive Card -->
-                <div class="lg:col-span-7">
-                    <div class="bg-dark-900 text-white rounded-2xl p-8 sm:p-10 shadow-xl relative overflow-hidden h-full flex flex-col justify-between">
-                        <div class="space-y-6 relative z-10">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-semibold">
-                                <i class="fa-solid fa-truck-ramped"></i> Para Correspondência e Entregas
-                            </div>
-                            <h3 class="text-2xl font-bold">Armarinho São José</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                D S J - Londrina Armarinhos Ltda.<br>
-                                Avenida Rio Branco, 70<br>
-                                Bairro Centro<br>
-                                Londrina — PR<br>
-                                CEP: 86070-010
-                            </p>
-                        </div>
-
-                        <div class="pt-8 relative z-10">
-                            <a href="https://maps.google.com/?q=Avenida+Rio+Branco+70+Londrina+PR" target="_blank" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-xl transition-all">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                                <span>Abrir no Google Maps</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div>
-                    <p class="font-bold text-white text-base">Armarinho São José</p>
-                    <p class="text-xs text-slate-500 mt-1">D S J - Londrina Armarinhos Ltda. • CNPJ: 04.985.778/0001-58</p>
-                </div>
-                <div class="text-xs text-slate-500 text-center md:text-right">
-                    <p>© 2002 - 2026 Armarinho São José. Todos os direitos reservados.</p>
-                    <p class="mt-1">Avenida Rio Branco, 70 - Centro - Londrina/PR - CEP 86070-010</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+function render(){
+  $("pills").innerHTML = CATS.map(c=>`<button class="pill ${c===cat?'on':''}" onclick="cat='${c}';render()">${c}</button>`).join("");
+  const q = $("q").value.trim().toLowerCase();
+  const list = P.filter(p=>(cat==="Todos"||p.cat===cat)&&(!q||(p.name+p.sku+p.desc).toLowerCase().includes(q)));
+  $("grid").innerHTML = list.length ? list.map(p=>`
+    <article class="card"><div class="img"><img loading="lazy" src="${p.img}" alt="${p.name}"><span class="tag">${p.cat}</span></div>
+    <div class="body"><span class="sku">${p.sku}</span><h4>${p.name}</h4><p class="d">${p.desc}</p><p class="s">${p.specs}</p>
+    <div class="row"><span class="sob">Sob consulta</span><div class="qty"><button onclick="step('${p.id}',-1)">−</button><span id="q-${p.id}">${qtys[p.id]||1}</span><button onclick="step('${p.id}',1)">+</button></div></div>
+    <button class="btn" onclick="add('${p.id}')">🛍️ Adicionar ao pedido</button></div></article>`).join("")
+    : `<p style="grid-column:1/-1;text-align:center;color:var(--muted);padding:64px">Nenhum produto encontrado.</p>`;
+}
+function step(id,d){ qtys[id]=Math.max(1,Math.min(99,(qtys[id]||1)+d)); $("q-"+id).textContent=qtys[id]; }
+function add(id){ const q=qtys[id]||1; cart[id]=(cart[id]||0)+q; qtys[id]=1; $("q-"+id).textContent=1; save(); toast(`${q}x ${P.find(p=>p.id===id).name} adicionado`); }
+function setQty(id,q){ if(q<=0) delete cart[id]; else cart[id]=q; save(); }
+function renderCart(){
+  const lines = P.filter(p=>cart[p.id]); const units = lines.reduce((a,p)=>a+cart[p.id],0);
+  $("count").textContent = units; $("units").textContent = units+" unidade(s)";
+  $("items").innerHTML = lines.length ? lines.map(p=>`<div class="ci"><img src="${p.img}" alt=""><div style="flex:1"><div class="n">${p.name}</div><div style="font-size:12px;color:#78350F">Sob consulta · ${p.sku}</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><div class="qty"><button onclick="setQty('${p.id}',${cart[p.id]-1})">−</button><span>${cart[p.id]}</span><button onclick="setQty('${p.id}',${cart[p.id]+1})">+</button></div>
+    <button class="x" onclick="setQty('${p.id}',0)">Remover</button></div></div></div>`).join("")
+    : `<p style="text-align:center;color:var(--muted);padding:64px 0">Seu pedido está vazio.</p>`;
+}
+function openCart(){ $("ov").classList.add("show"); $("drawer").classList.add("show"); }
+function closeAll(){ ["ov","drawer","modal"].forEach(i=>$(i).classList.remove("show")); }
+function openCheckout(){ if(!Object.keys(cart).length) return toast("Seu pedido está vazio."); $("drawer").classList.remove("show"); $("modal").classList.add("show"); $("ov").classList.add("show"); }
+function setEnt(v){ ent=v; $("b-ret").classList.toggle("on",v==="retirada"); $("b-ent").classList.toggle("on",v==="entrega"); $("endBox").style.display=v==="entrega"?"block":"none"; }
+function sendOrder(e){
+  e.preventDefault();
+  const end = $("end").value.trim();
+  if(ent==="entrega" && !end) return toast("Informe o endereço de entrega.");
+  const code = Math.random().toString(36).slice(2,8).toUpperCase();
+  const lines = P.filter(p=>cart[p.id]).map(p=>`• ${cart[p.id]}x ${p.name} (SKU ${p.sku})`);
+  const msg = [
+    "*Novo pedido — Catálogo Armarinho São José*", `Pedido: #${code}`, "", "*Itens (preço sob consulta):*", ...lines, "",
+    "*Cliente*", `Nome: ${$("nome").value.trim()}`, `Telefone: ${$("tel").value.trim()}`,
+    `Recebimento: ${ent==="retirada" ? "Retirada na loja (Av. Rio Branco, 70 - Centro, Londrina)" : "Entrega"}`,
+    ...(ent==="entrega" ? [`Endereço: ${end}`] : []),
+    `Pagamento: ${$("pag").value}`,
+    ...($("obs").value.trim() ? [`Observações: ${$("obs").value.trim()}`] : []),
+    "", "Aguardo o orçamento para finalizar o pedido. Obrigado!"
+  ].join("\n");
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+  cart = {}; save(); closeAll(); e.target.reset(); setEnt("retirada");
+  toast("Pedido enviado para o WhatsApp!");
+}
+render(); renderCart();
+</script>
 </body>
 </html>
