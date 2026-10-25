@@ -1,287 +1,559 @@
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armarinho São José — Portal Editorial e Informativo</title>
-<meta name="description" content="Portal estritamente editorial e informativo mantido por D S J - Londrina Armarinhos Ltda. (CNPJ 04.985.778/0001-58). Não vende, não cobra taxas e não emite documentos.">
-<script src="https://cdn.tailwindcss.com"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12110e">
+<title>Ponto Corrido: caderno independente de armarinho e costura para quem cria em Londrina e no norte do Paraná</title>
+<meta name="description" content="Caderno editorial sobre linhas, agulhas, zíperes, botões, fitas e artesanato, mantido pela D S J - Londrina Armarinhos Ltda. (Armarinho São José), com finalidade somente informativa.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600;800&family=Martian+Mono:wght@400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
-  html{scroll-behavior:smooth}
-  body{font-family:"Plus Jakarta Sans",sans-serif;background:#FAF8F5;color:#1A202C}
-  .serif{font-family:"Playfair Display",Georgia,serif}
-  .dots{background-image:radial-gradient(rgba(200,90,50,.10) 1px,transparent 1px);background-size:22px 22px}
-  ::selection{background:#C85A32;color:#fff}
-  .card{transition:transform .3s,box-shadow .3s}
-  .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -18px rgba(0,0,0,.25)}
-  .tab.ativo{background:#C85A32;color:#fff;box-shadow:0 6px 16px -6px rgba(200,90,50,.5)}
-  .fade{animation:rise .7s cubic-bezier(.22,1,.36,1) both}
-  @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+:root{--ink:#12110e;--ink-2:#1b1915;--ink-3:#25221c;--paper:#f1e8d8;--paper-2:#d9cfbd;--muted:#b3a994;--linha:#e4572e;--ouro:#d9a441;--line:rgba(241,232,216,.12);--serif:"Gloock",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;--mono:"Martian Mono",ui-monospace,monospace;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:var(--sans);color:var(--paper);background:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--linha);color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1280px,100% - 48px);margin-inline:auto}
+em{font-style:italic;color:var(--ouro)}
+.faixa{background:var(--ouro);color:var(--ink);font-size:13px;line-height:1.5}
+.faixa .wrap{display:flex;gap:14px;align-items:flex-start;padding:10px 0}
+.sinal{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-family:var(--mono);font-size:12px;background:var(--ink);color:var(--ouro)}
+.faixa p{font-weight:500}
+.topo{position:sticky;top:0;z-index:50;background:rgba(18,17,14,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.topo-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca svg{width:42px;height:42px;transition:transform .6s var(--ease)}
+.marca:hover svg{transform:rotate(-12deg) scale(1.05)}
+.wm{font-family:var(--serif);font-size:23px;letter-spacing:-.01em;line-height:1}
+.nav{display:flex;gap:4px}
+.nav a{font-size:14px;text-decoration:none;padding:9px 14px;border-radius:99px;color:var(--paper-2);transition:background-color .3s,color .3s}
+.nav a:hover{background:var(--ink-3);color:var(--paper)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--paper);border-radius:99px;padding:8px 16px;font:500 14px var(--sans);cursor:pointer}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--linha);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:0;border-top:2px dashed currentColor}
+.h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,78px);line-height:1;letter-spacing:-.025em;margin:26px 0 30px}
+.ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ln>span{display:inline-block;transform:translateY(105%);animation:sobe 1.15s var(--ease) forwards}
+.ln .gold{color:var(--ouro);font-style:italic}
+@keyframes sobe{to{transform:none}}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,64px);line-height:1.02;letter-spacing:-.02em;max-width:16ch}
+.intro{color:var(--muted);max-width:46ch}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--paper);color:var(--ink);text-decoration:none;font-weight:600;padding:16px 26px;border-radius:99px;transition:background-color .35s,transform .35s var(--ease)}
+.btn .ar{display:inline-block;transition:transform .4s var(--ease)}
+.btn:hover{background:var(--linha);transform:translateY(-2px)}
+.btn:hover .ar{transform:translateY(4px)}
+.hero{padding:64px 0 40px;position:relative}
+.hero-top{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:end}
+.hero-txt>p.rv{max-width:58ch;color:var(--paper-2);margin-bottom:34px}
+.fatos{border:1px solid var(--line);border-radius:22px;padding:28px;background:linear-gradient(180deg,var(--ink-2),var(--ink))}
+.fatos h2{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.15;margin-bottom:18px}
+.fatos dt{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ouro);margin-top:16px}
+.fatos dd{color:var(--paper-2);font-size:15px;line-height:1.55;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.fatos dd:last-child{border-bottom:0;padding-bottom:0}
+.stage{margin-top:56px;perspective:1400px;position:relative}
+.paisagem{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:2.4/1;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s var(--ease);clip-path:inset(0 0 0 0 round 28px);animation:abre 1.6s .45s var(--ease) both}
+@keyframes abre{from{clip-path:inset(18% 8% 18% 8% round 28px)}to{clip-path:inset(0 0 0 0 round 28px)}}
+.paisagem img{width:100%;height:120%;object-fit:cover;margin-top:-10%;filter:saturate(.92) contrast(1.05)}
+.paisagem::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,transparent 30%,rgba(18,17,14,.65) 100%)}
+.cap{position:absolute;left:24px;bottom:20px;z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:rgba(18,17,14,.7);backdrop-filter:blur(12px);padding:8px 14px;border-radius:99px}
+.fio{position:absolute;left:-2%;top:-70px;width:104%;height:200px;z-index:3;pointer-events:none;overflow:visible}
+.fio path{fill:none;stroke:var(--linha);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:costura 2.6s 1s var(--ease) forwards}
+.fio .agulha{opacity:0;animation:aparece .6s 3.2s forwards}
+@keyframes costura{to{stroke-dashoffset:0}}
+@keyframes aparece{to{opacity:1}}
+@keyframes aparece-h{from{opacity:0;transform:translateY(24px)}}
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;margin-top:40px}
+.track{display:flex;width:max-content;animation:corre 70s linear infinite}
+.track span{font-family:var(--serif);font-size:clamp(28px,3.6vw,52px);white-space:nowrap;padding-right:28px;color:var(--paper-2)}
+.track i{color:var(--linha);font-style:normal;padding:0 18px}
+@keyframes corre{to{transform:translateX(-50%)}}
+.sec{padding:130px 0}
+.temas-head{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;margin-bottom:72px}
+.pauta{list-style:none}
+.pauta li{display:grid;grid-template-columns:120px 1fr 1.25fr;gap:32px;padding:38px 0;position:relative;align-items:start}
+.pauta li::before{content:"";position:absolute;left:0;right:0;top:0;border-top:2px dashed var(--line)}
+.pauta li::after{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--linha);transition:width 1.2s var(--ease)}
+.pauta li:hover::after{width:100%}
+.marco{font-family:var(--mono);font-size:14px;color:var(--linha);padding-top:10px}
+.pauta h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,38px);line-height:1.08;transition:transform .5s var(--ease)}
+.pauta li:hover h3{transform:translateX(10px)}
+.pauta p{color:var(--paper-2)}
+.check{padding:40px 0}
+.panel{background:var(--paper);color:var(--ink);border-radius:32px;padding:clamp(28px,5vw,72px);position:relative;overflow:hidden}
+.panel .eyebrow,.panel em{color:#b23a17}
+.panel::after{content:"";position:absolute;inset:14px;border:2px dashed rgba(18,17,14,.18);border-radius:24px;pointer-events:none}
+.check-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;position:relative;z-index:1}
+.panel .intro{color:#4c463c!important;margin-top:22px}
+.contador{font-family:var(--serif);font-size:96px;line-height:1;margin-top:40px}
+.contador small{font-size:32px;color:#6b6457}
+.barra{height:6px;background:rgba(18,17,14,.1);border-radius:9px;margin-top:18px;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:#b23a17;transition:width .6s var(--ease)}
+.conferir{list-style:none}
+.conferir li{border-bottom:1px solid rgba(18,17,14,.14)}
+.conferir label{display:flex;gap:18px;padding:18px 4px;cursor:pointer;align-items:flex-start}
+.conferir input{appearance:none;-webkit-appearance:none;flex:none;width:26px;height:26px;border:2px solid var(--ink);border-radius:50%;margin-top:2px;cursor:pointer;display:grid;place-items:center;transition:background-color .3s,transform .3s var(--ease)}
+.conferir input:checked{background:#b23a17;border-color:#b23a17;transform:scale(1.08)}
+.conferir input:checked::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--paper)}
+.tira{transition:opacity .3s}
+.conferir input:checked+.tira{opacity:.55;text-decoration:line-through;text-decoration-style:dashed}
+.fecho{margin-top:28px;color:#4c463c;font-size:15px}
+.faq-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+.sticky{position:sticky;top:120px}
+.perguntas details{border-top:1px solid var(--line);padding:4px 0}
+.perguntas details:last-child{border-bottom:1px solid var(--line)}
+.perguntas summary{list-style:none;cursor:pointer;display:flex;gap:20px;padding:24px 40px 24px 0;font-family:var(--serif);font-size:clamp(20px,1.8vw,25px);line-height:1.25;position:relative;transition:color .3s}
+.perguntas summary::-webkit-details-marker{display:none}
+.perguntas summary::after{content:"+";position:absolute;right:4px;top:20px;font-family:var(--mono);font-size:22px;color:var(--linha);transition:transform .45s var(--ease)}
+.perguntas details[open] summary::after{transform:rotate(45deg)}
+.perguntas summary:hover{color:var(--ouro)}
+.pn{font-family:var(--mono);font-size:12px;color:var(--linha);padding-top:8px;flex:none;width:28px}
+.perguntas details p{padding:0 0 26px 48px;color:var(--paper-2);max-width:62ch;animation:abreP .5s var(--ease)}
+@keyframes abreP{from{opacity:0;transform:translateY(-8px)}}
+.sobre{background:var(--ink-2)}
+.quem-grade{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:start}
+.quem-foto{position:sticky;top:110px}
+.frame{border-radius:26px;overflow:hidden;aspect-ratio:4/5;clip-path:polygon(0 0,100% 0,100% 88%,86% 100%,0 100%)}
+.frame img{width:100%;height:118%;object-fit:cover;margin-top:-9%}
+.quem-foto figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:16px}
+.quem-txt p{color:var(--paper-2);margin-top:22px;max-width:60ch}
+.quem-txt p.lead{color:var(--paper);font-size:20px;line-height:1.55;margin-top:34px}
+.ficha-cnpj{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.ficha-cnpj div{padding:16px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.ficha-cnpj div:nth-child(2n){border-right:0}
+.ficha-cnpj div:nth-last-child(-n+2){border-bottom:0}
+.ficha-cnpj dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ouro)}
+.ficha-cnpj dd{font-size:15px;margin-top:4px}
+.bento{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:1fr 1fr;gap:22px;margin-top:64px}
+.card{background:var(--ink-2);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .4s,transform .5s var(--ease)}
+.card:hover{border-color:rgba(228,87,46,.5);transform:translateY(-4px)}
+.card.grande{grid-row:1/3}
+.card .ph{overflow:hidden;position:relative}
+.card.grande .ph{flex:1;min-height:320px}
+.card.menor .ph{height:190px}
+.card .ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.2s var(--ease)}
+.card:hover .ph img{transform:scale(1.06)}
+.corpo{padding:26px 28px 30px}
+.corpo h3{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.15}
+.card.grande h3{font-size:clamp(28px,2.6vw,38px)}
+.corpo h3 a{text-decoration:none;background:linear-gradient(var(--linha),var(--linha)) 0 100%/0 2px no-repeat;transition:background-size .5s var(--ease)}
+.corpo h3 a:hover{background-size:100% 2px}
+.corpo p{color:var(--paper-2);margin-top:14px;max-width:56ch}
+.seguir{display:inline-flex;gap:10px;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--linha);text-decoration:none}
+.seguir::after{content:"→";transition:transform .4s var(--ease)}
+.seguir:hover::after{transform:translateX(6px)}
+.nota-leit{margin-top:40px;color:var(--paper-2);max-width:70ch}
+.nota-leit a{color:var(--ouro)}
+.contatos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.ficha{border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--ink);transition:border-color .4s}
+.ficha:hover{border-color:var(--ouro)}
+.ficha h3{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);margin-bottom:12px}
+.ficha p{font-size:15px;line-height:1.5;word-break:break-word}
+.ficha a{text-decoration:none;border-bottom:1px dashed var(--muted)}
+.sem-form{grid-column:1/-1;border-top:2px dashed var(--line);padding-top:26px;color:var(--paper-2);max-width:80ch}
+.rodape{padding:80px 0 120px;border-top:1px solid var(--line)}
+.rodape-top{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.rodape-nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+.rodape-nav a{color:var(--paper-2);text-decoration:none;font-size:14px}
+.rodape-nav a:hover{color:var(--linha)}
+.rodape-faixa{display:flex;gap:14px;margin-top:44px;padding:22px;border:1px solid var(--line);border-radius:18px;font-size:14px;color:var(--paper-2)}
+.rodape-faixa .sinal{background:var(--ouro);color:var(--ink)}
+.rodape-faixa a{color:var(--ouro)}
+.direitos{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:30px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.aviso-chk{position:fixed;bottom:0;left:0;opacity:0;pointer-events:none}
+.aviso{position:fixed;left:24px;right:24px;bottom:20px;max-width:640px;z-index:60;background:rgba(27,25,21,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;gap:18px;align-items:center;font-size:13px;color:var(--paper-2);animation:aviso .8s 1.8s var(--ease) both}
+@keyframes aviso{from{opacity:0;transform:translateY(20px)}}
+.aviso a{color:var(--ouro)}
+.aviso label{flex:none;cursor:pointer;background:var(--paper);color:var(--ink);font-weight:600;padding:10px 16px;border-radius:99px;transition:background-color .3s}
+.aviso label:hover{background:var(--linha)}
+.aviso-chk:checked+.aviso{display:none}
+@media (max-width:1020px){
+  .hero-top,.temas-head,.check-grid,.faq-grid,.quem-grade{grid-template-columns:1fr;gap:40px}
+  .sticky,.quem-foto{position:static}
+  .pauta li{grid-template-columns:60px 1fr;gap:12px 20px}
+  .pauta li p{grid-column:2}
+  .contatos{grid-template-columns:1fr 1fr}
+  .frame{aspect-ratio:16/11}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 36px)}
+  .nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:var(--ink);border-bottom:1px solid var(--line);padding:12px 18px 20px}
+  .nav.aberta{display:flex}
+  .menu-btn{display:block}
+  .h1 .ln{display:inline;overflow:visible}
+  .h1 .ln::after{content:" "}
+  .h1 .ln>span{display:inline;transform:none;animation:none}
+  .h1{animation:aparece-h 1s var(--ease) both}
+  .wm{font-size:20px}
+  .hero{padding-top:40px}
+  .paisagem{aspect-ratio:4/3.4}
+  .fio{top:-46px;height:110px}
+  .sec{padding:86px 0}
+  .bento{grid-template-columns:1fr;grid-template-rows:auto}
+  .card.grande{grid-row:auto}
+  .card.grande .ph{min-height:240px;flex:none;height:240px}
+  .contatos,.ficha-cnpj{grid-template-columns:1fr}
+  .ficha-cnpj div{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .ficha-cnpj div:last-child{border-bottom:0!important}
+  .contador{font-size:72px}
+  .aviso{left:12px;right:12px;bottom:12px;flex-direction:column;align-items:flex-start}
+  .perguntas details p{padding-left:0}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 
-<!-- FAIXA DE AVISO FIXA -->
-<div class="fixed top-0 inset-x-0 z-50">
-  <div class="bg-[#2C5282] text-white text-center text-xs sm:text-sm py-2 px-4 font-medium tracking-wide">
-    Portal estritamente editorial e informativo — não vende, não cobra taxas e não emite documentos
-    <span class="hidden sm:inline text-white/50 mx-2">•</span>
-    <span class="font-semibold block sm:inline">Mantido por D S J - Londrina Armarinhos Ltda. — CNPJ 04.985.778/0001-58</span>
+<!-- ============ POLÍTICA / AVISO LEGAL — TOPO ============ -->
+<div class="faixa">
+  <div class="wrap">
+    <span class="sinal" aria-hidden="true">!</span>
+    <p>CNPJ 04.985.778/0001-58. Publicação mantida por empresa privada do comércio varejista de artigos de armarinho (CNAE 47.55-5-02), com finalidade somente editorial e informativa. Nada neste portal vende produto, reserva mercadoria, faz orçamento, cobra taxa nem intermedeia negócio com terceiros.</p>
   </div>
-  <header class="bg-[#FAF8F5]/95 backdrop-blur border-b border-[#E2DACF]">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#topo" class="flex items-center gap-3">
-        <span class="w-9 h-9 rounded-full bg-[#C85A32] text-white flex items-center justify-center font-bold serif">SJ</span>
-        <span class="leading-tight">
-          <span class="block serif font-bold text-lg text-slate-900">Armarinho São José</span>
-          <span class="block text-[10px] uppercase tracking-[.2em] text-[#C85A32] font-semibold">Portal Editorial</span>
-        </span>
-      </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
-        <a href="#sobre" class="hover:text-[#C85A32]">Sobre</a>
-        <a href="#conteudos" class="hover:text-[#C85A32]">Conteúdos</a>
-        <a href="#equipe" class="hover:text-[#C85A32]">Equipe</a>
-        <a href="#cnpj" class="hover:text-[#C85A32]">Dados Cadastrais</a>
-        <a href="#privacidade" class="px-4 py-2 rounded-full border border-[#C85A32] text-[#C85A32] hover:bg-[#C85A32] hover:text-white transition">Privacidade</a>
-      </nav>
-      <button onclick="document.getElementById('mnav').classList.toggle('hidden')" class="md:hidden p-2" aria-label="Menu">☰</button>
-    </div>
-    <nav id="mnav" class="hidden md:hidden bg-white border-t border-[#E2DACF] px-6 py-4 flex flex-col gap-4 text-sm font-medium">
-      <a href="#sobre">Sobre</a><a href="#conteudos">Conteúdos</a><a href="#equipe">Equipe</a>
-      <a href="#cnpj">Dados Cadastrais</a><a href="#privacidade" class="text-[#C85A32]">Política de Privacidade</a>
-    </nav>
-  </header>
 </div>
 
-<main id="topo" class="pt-40 sm:pt-36">
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="#abertura" aria-label="Ponto Corrido">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1b1915" stroke="rgba(217,164,65,.4)"/><path d="M12 44c8-10 14 6 22-4s12-16 18-20" fill="none" stroke="#e4572e" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="5 5"/><path d="M48 12 20 50" stroke="#d9a441" stroke-width="3.4" stroke-linecap="round"/><ellipse cx="46" cy="15" rx="1.6" ry="3.4" transform="rotate(37 46 15)" fill="#1b1915"/></svg>
+      <span class="wm">Ponto <em>Corrido</em></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#temas">Temas</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="relative pb-20 overflow-hidden">
-    <div class="absolute inset-0 dots opacity-60"></div>
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative">
-      <div class="fade">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[.18em] text-[#C85A32] bg-[#FDF6F0] border border-[#F0D9C8] rounded-full px-4 py-1.5">Desde 2002 em Londrina — PR</span>
-        <h1 class="mt-6 serif font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.12]">Um portal editorial sobre o universo do <span class="text-[#C85A32]">armarinho</span></h1>
-        <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">Guias informativos, histórias e conhecimento sobre fios, tecidos e artesanato — mantido com carinho por <strong class="text-slate-800">D S J - Londrina Armarinhos Ltda.</strong> (CNPJ 04.985.778/0001-58).</p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#conteudos" class="px-7 py-3.5 rounded-full bg-[#C85A32] text-white font-semibold text-sm hover:bg-[#B24B25] shadow-lg shadow-[#C85A32]/25">Explorar conteúdos</a>
-          <a href="#aviso" class="px-7 py-3.5 rounded-full border border-slate-300 text-slate-700 font-semibold text-sm hover:border-[#C85A32] hover:text-[#C85A32]">Nossa finalidade</a>
+<main>
+  <!-- ============ HERO ============ -->
+  <section id="abertura" class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <div class="hero-txt">
+          <p class="eyebrow">Leitura independente</p>
+          <h1 class="h1">
+            <span class="ln"><span style="animation-delay:.05s">Como um caderno de</span></span>
+            <span class="ln"><span style="animation-delay:.17s">armarinho ajuda quem</span></span>
+            <span class="ln"><span style="animation-delay:.29s" class="gold">costura, conserta e cria</span></span>
+            <span class="ln"><span style="animation-delay:.41s">no norte do Paraná?</span></span>
+          </h1>
+          <p class="rv d1">Linha que combina com a agulha, zíper do tamanho certo, botão que passa na casa e fio do mesmo lote: são detalhes pequenos que decidem se a peça fica pronta ou volta para a gaveta. Aqui esses assuntos ficam juntos, em texto direto, para quem costura em casa, faz ajuste de roupa ou trabalha com artesanato. Quem espera encontrar uma loja virtual não a encontra: o portal só publica texto.</p>
+          <a class="btn rv d2" href="#temas">Ver os cinco temas <span class="ar">↓</span></a>
         </div>
-        <p class="mt-8 text-sm text-slate-500">📍 Avenida Rio Branco, 70 — Centro, Londrina — PR</p>
+        <aside class="fatos rv d2">
+          <h2>Quatro fatos que sustentam o resto do portal</h2>
+          <dl>
+            <dt>Linha e agulha</dt>
+            <dd>Quanto mais fino o tecido, mais fina a agulha e a linha. Agulha grossa em tecido leve deixa furo; agulha fina em jeans quebra.</dd>
+            <dt>Zíper</dt>
+            <dd>Mede-se pela parte dentada, sem contar as fitas que sobram nas pontas. Na dúvida, leve a abertura medida em centímetros.</dd>
+            <dt>Botão</dt>
+            <dd>O tamanho comercial costuma vir em “linhas” (L): cada linha equivale a cerca de 0,635 mm, então um botão 24L tem uns 15 mm.</dd>
+            <dt>Fio de crochê e tricô</dt>
+            <dd>Cada lote de tingimento sai com um tom levemente diferente. Para a mesma peça, compre tudo do mesmo lote.</dd>
+          </dl>
+        </aside>
       </div>
-      <div class="relative fade">
-        <div class="absolute -inset-4 bg-[#C85A32]/10 rounded-[2rem] rotate-3"></div>
-        <img src="https://images.pexels.com/photos/37397519/pexels-photo-37397519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Novelos de linha em ateliê de armarinho" class="relative rounded-[2rem] shadow-2xl object-cover w-full aspect-[4/3] border-4 border-white">
-        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl px-6 py-4 border border-[#E2DACF]">
-          <p class="text-2xl serif font-bold text-[#C85A32]">24+</p>
-          <p class="text-xs text-slate-500 font-medium uppercase tracking-wider">anos de história</p>
+      <div class="stage" id="stage">
+        <svg class="fio" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+          <path pathLength="1" d="M0 150 C 160 40, 300 210, 460 110 S 760 20, 900 120 S 1120 170, 1190 60"/>
+          <g class="agulha" transform="translate(1190 60) rotate(-58)"><rect x="-3" y="-46" width="6" height="58" rx="3" fill="#d9a441"/><ellipse cx="0" cy="-36" rx="1.4" ry="5" fill="#12110e"/></g>
+        </svg>
+        <figure class="paisagem" id="paisagem">
+          <img src="img/hero-parede-de-linhas.jpg" alt="Parede de carretéis de linha coloridos organizados em fileiras, como num balcão de armarinho" width="2000" height="1333" fetchpriority="high" data-par="0.1">
+          <figcaption class="cap">Ponto Corrido · Londrina, Paraná</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Linhas e agulhas <i>✦</i> Zíperes <i>✦</i> Botões <i>✦</i> Fitas e elásticos <i>✦</i> Viés <i>✦</i> Crochê e tricô <i>✦</i> Artesanato <i>✦</i></span>
+      <span>Linhas e agulhas <i>✦</i> Zíperes <i>✦</i> Botões <i>✦</i> Fitas e elásticos <i>✦</i> Viés <i>✦</i> Crochê e tricô <i>✦</i> Artesanato <i>✦</i></span>
+    </div>
+  </div>
+
+  <!-- ============ TEMAS ============ -->
+  <section id="temas" class="sec">
+    <div class="wrap">
+      <div class="temas-head">
+        <div>
+          <p class="eyebrow rv">Temas</p>
+          <h2 class="h2 rv d1" style="margin-top:22px">Cinco assuntos cobrem a maior parte <em>das dúvidas</em></h2>
+        </div>
+        <p class="intro rv d2">Cada tema vira um artigo ou uma seção do guia, com medida, exemplo e o limite do que um texto resolve. Nenhum bloco processa pedido, reserva ou orçamento do leitor.</p>
+      </div>
+      <ol class="pauta">
+        <li class="rv"><span class="marco" aria-hidden="true">01</span><h3>Linhas e agulhas</h3><p>A espessura das duas precisa conversar com o tecido. Linha de poliéster serve para quase tudo; algodão pede linha de algodão quando a peça vai ser tingida depois. Agulha de máquina se troca a cada projeto grande, não quando quebra.</p></li>
+        <li class="rv"><span class="marco" aria-hidden="true">02</span><h3>Zíperes: espiral, metal, invisível e destacável</h3><p>O espiral de náilon dobra fácil e vai bem em saia e almofada; o de metal aguenta jeans e bolsa; o invisível some na costura de vestido; o destacável abre por inteiro e é o da jaqueta. Escolher o tipo vem antes de escolher a cor.</p></li>
+        <li class="rv"><span class="marco" aria-hidden="true">03</span><h3>Botões, colchetes e pressões</h3><p>Botão com furos, com pé, de pressão ou colchete resolvem fechamentos diferentes. O diâmetro decide o tamanho da casa: a regra prática é casa com o diâmetro do botão mais a espessura dele.</p></li>
+        <li class="rv"><span class="marco" aria-hidden="true">04</span><h3>Fitas, elásticos e viés</h3><p>Elástico perde força com calor e lavagem; o de cós pede largura maior do que parece. Viés cortado em diagonal acompanha curva de decote e cava; a fita reta não. Algodão encolhe: lavar antes de costurar evita surpresa.</p></li>
+        <li class="rv"><span class="marco" aria-hidden="true">05</span><h3>Crochê, tricô e artesanato</h3><p>A agulha de crochê é numerada em milímetros, e o rótulo do fio costuma indicar a faixa recomendada. Amostra de dez por dez centímetros antes de começar evita peça grande demais ou apertada.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CHECKLIST ============ -->
+  <section id="checklist" class="check">
+    <div class="wrap">
+      <div class="panel rv">
+        <div class="check-grid">
+          <div>
+            <p class="eyebrow">Checklist</p>
+            <h2 class="h2" style="margin-top:22px">Seis coisas para ter à mão antes de ir <em>ao balcão</em></h2>
+            <p class="intro">Assinale o que já está com você. O que costuma atrasar a escolha do aviamento é a medida que ficou em casa ou a cor lembrada de memória.</p>
+            <div class="contador"><span id="cnt">0</span><small> / 6</small></div>
+            <div class="barra"><i id="bar"></i></div>
+          </div>
+          <div>
+            <ul class="conferir" id="conferir">
+              <li><label><input type="checkbox"><span class="tira">Um retalho do tecido, ou a própria peça, para comparar a cor da linha sob luz natural</span></label></li>
+              <li><label><input type="checkbox"><span class="tira">A medida da abertura do zíper em centímetros, tirada com fita métrica e não estimada</span></label></li>
+              <li><label><input type="checkbox"><span class="tira">Um botão antigo da peça, ou o diâmetro dele anotado em milímetros</span></label></li>
+              <li><label><input type="checkbox"><span class="tira">O tipo de tecido: malha, tricoline, jeans, linho, moletom ou tecido sintético</span></label></li>
+              <li><label><input type="checkbox"><span class="tira">A quantidade calculada com sobra: metros de fita, elástico ou viés, mais uns dez por cento</span></label></li>
+              <li><label><input type="checkbox"><span class="tira">O número do lote no rótulo do fio já usado, se a peça de crochê ou tricô estiver pela metade</span></label></li>
+            </ul>
+            <p class="fecho">A conversa no balcão é o primeiro passo do projeto. Quem leva os seis itens economiza tempo, evita compra repetida e sai sabendo por que escolheu cada aviamento.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AVISO EDITORIAL -->
-  <section id="aviso" class="px-6 py-14">
-    <div class="max-w-6xl mx-auto rounded-3xl border-2 border-[#F6E05E] bg-[#FFF8E7] p-8 sm:p-12">
-      <p class="text-xs font-bold uppercase tracking-[.2em] text-[#975A16]">⚠ Aviso importante</p>
-      <h2 class="mt-2 serif font-semibold text-2xl sm:text-3xl text-[#744210]">Finalidade somente editorial e informativa</h2>
-      <p class="mt-3 text-[#744210]/90 leading-relaxed max-w-3xl">Este portal tem caráter exclusivamente editorial. Todo o conteúdo publicado aqui serve apenas para informar e educar os leitores. <strong>Nada neste portal emite documento, cobra taxa, vende peça ou equipamento, nem intermedeia negócio com terceiros.</strong></p>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm font-medium text-[#744210]">
-        <div class="bg-white/70 rounded-xl px-4 py-3 border border-[#F6E05E]/60">✖ Não emite documentos fiscais ou oficiais</div>
-        <div class="bg-white/70 rounded-xl px-4 py-3 border border-[#F6E05E]/60">✖ Não cobra taxas ou mensalidades</div>
-        <div class="bg-white/70 rounded-xl px-4 py-3 border border-[#F6E05E]/60">✖ Não vende peças, produtos ou equipamentos</div>
-        <div class="bg-white/70 rounded-xl px-4 py-3 border border-[#F6E05E]/60">✖ Não intermedeia negócios com terceiros</div>
+  <!-- ============ DÚVIDAS ============ -->
+  <section id="duvidas" class="sec">
+    <div class="wrap faq-grid">
+      <div class="sticky">
+        <p class="eyebrow rv">Dúvidas</p>
+        <h2 class="h2 rv d1" style="margin-top:22px">Dúvidas que chegam com mais <em>frequência</em></h2>
+      </div>
+      <div class="perguntas rv d1">
+        <details><summary><span class="pn" aria-hidden="true">P1</span>O portal vende, reserva produto ou faz orçamento?</summary><p>Não. Este portal só publica texto: não vende, não reserva, não faz orçamento, não cobra e não encaminha pedido a ninguém. Para comprar, procure diretamente um estabelecimento comercial da sua escolha.</p></details>
+        <details><summary><span class="pn" aria-hidden="true">P2</span>Qual agulha de máquina usar em cada tecido?</summary><p>Como régua geral, numeração 70 para tecidos finos, 80 e 90 para tricoline e tecidos médios, 100 a 110 para jeans e lona. Malha pede ponta bola, que afasta as fibras em vez de cortá-las. O manual da máquina e a embalagem da agulha mandam.</p></details>
+        <details><summary><span class="pn" aria-hidden="true">P3</span>O conteúdo vale para quem não mora em Londrina?</summary><p>Vale. A técnica da costura não muda com o CEP: medida de zíper, numeração de agulha e lote de fio são iguais em qualquer cidade. O que varia é onde cada leitor compra o material.</p></details>
+        <details><summary><span class="pn" aria-hidden="true">P4</span>Quem assina os textos e como se corrige um erro?</summary><p>A assinatura da redação e a data de publicação vêm em cada artigo. O portal não promete checagem que não consiga provar; quando alguém aponta um erro, a correção entra no texto com data nova.</p></details>
+        <details><summary><span class="pn" aria-hidden="true">P5</span>Dá para trocar só o cursor de um zíper estragado?</summary><p>Muitas vezes, sim, desde que os dentes estejam inteiros e o cursor novo seja do mesmo tipo e da mesma numeração do zíper. Se a fita rasgou ou faltam dentes, a troca do zíper inteiro costuma ser o caminho.</p></details>
+        <details><summary><span class="pn" aria-hidden="true">P6</span>Como avisar sobre um erro ou sugerir um tema?</summary><p>Escrevendo para financeiro@armarinhosaojose.com.br. Não há formulário, cadastro nem login. Correção confirmada entra no texto, e a data da revisão aparece no próprio artigo.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <div class="relative order-2 lg:order-1">
-        <img src="https://images.unsplash.com/photo-1671535108620-d169ce916f09?q=85&w=940&auto=format&fit=crop" alt="Bordado artesanal" class="rounded-[2rem] object-cover w-full aspect-[4/5] shadow-xl">
-        <div class="absolute -top-5 -right-5 bg-[#2C5282] text-white rounded-2xl px-6 py-4 shadow-lg rotate-2">
-          <p class="serif font-bold text-xl">Matriz</p><p class="text-xs opacity-80 uppercase tracking-wider">Londrina — Paraná</p>
+  <!-- ============ SOBRE ============ -->
+  <section id="sobre" class="sec sobre">
+    <div class="wrap quem-grade">
+      <figure class="quem-foto rv">
+        <div class="frame">
+          <img src="img/fitas.jpg" alt="Fitas de cetim de muitas cores organizadas lado a lado, como num mostruário de armarinho" width="1600" height="1200" loading="lazy" data-par="0.08">
         </div>
-      </div>
-      <div class="order-1 lg:order-2">
-        <p class="text-xs font-bold uppercase tracking-[.2em] text-[#C85A32]">Sobre o portal</p>
-        <h2 class="mt-3 serif font-semibold text-3xl lg:text-4xl text-slate-900">Conhecimento tecido com tradição</h2>
-        <p class="mt-5 text-slate-600 leading-relaxed">O <strong>Armarinho São José</strong> nasceu em 2002 no coração de Londrina e se tornou referência em artigos de armarinho no norte do Paraná. Este portal é a nossa forma de devolver à comunidade parte desse conhecimento: um espaço editorial, gratuito e aberto, dedicado a quem ama fios, tecidos, agulhas e artesanato têxtil.</p>
-        <p class="mt-4 text-slate-600 leading-relaxed">Aqui você não encontra loja, catálogo de vendas ou serviços pagos. Encontra, sim, conteúdo bem pesquisado e escrito com carinho — sem qualquer compromisso comercial.</p>
-        <ul class="mt-8 space-y-5 text-sm">
-          <li class="flex gap-4"><span class="w-11 h-11 shrink-0 rounded-xl bg-[#FDF6F0] text-[#C85A32] flex items-center justify-center border border-[#F0D9C8] font-bold">✂</span><div><strong class="text-slate-900">Informação de qualidade</strong><p class="text-slate-500 mt-0.5">Guias escritos por quem vive o universo do armarinho há mais de duas décadas.</p></div></li>
-          <li class="flex gap-4"><span class="w-11 h-11 shrink-0 rounded-xl bg-[#FDF6F0] text-[#C85A32] flex items-center justify-center border border-[#F0D9C8] font-bold">❤</span><div><strong class="text-slate-900">Paixão pelo artesanato</strong><p class="text-slate-500 mt-0.5">Valorizamos as técnicas manuais e as histórias de quem cria com as próprias mãos.</p></div></li>
-          <li class="flex gap-4"><span class="w-11 h-11 shrink-0 rounded-xl bg-[#FDF6F0] text-[#C85A32] flex items-center justify-center border border-[#F0D9C8] font-bold">🏛</span><div><strong class="text-slate-900">Tradição londrinense</strong><p class="text-slate-500 mt-0.5">Mantido por D S J - Londrina Armarinhos Ltda., ativa desde 08/04/2002 no centro de Londrina.</p></div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTEÚDOS -->
-  <section id="conteudos" class="py-24 bg-[#F3EFEA]">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="max-w-2xl">
-        <p class="text-xs font-bold uppercase tracking-[.2em] text-[#C85A32]">Conteúdos editoriais</p>
-        <h2 class="mt-3 serif font-semibold text-3xl lg:text-4xl text-slate-900">Guias e artigos informativos</h2>
-        <p class="mt-4 text-slate-600">Uma curadoria de temas do mundo do armarinho, publicada apenas com fins educativos. Nenhum conteúdo abaixo constitui oferta de venda.</p>
-      </div>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
-        <div id="tabs" class="flex flex-wrap gap-2"></div>
-        <input id="busca" type="text" placeholder="Buscar tema..." class="px-5 py-2.5 rounded-full bg-white border border-[#E2DACF] text-sm w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-[#C85A32]/40">
-      </div>
-      <div id="cards" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
-      <p id="vazio" class="hidden mt-10 text-center text-slate-500">Nenhum conteúdo encontrado para essa busca.</p>
-    </div>
-  </section>
-
-  <!-- EQUIPE -->
-  <section id="equipe" class="py-24 bg-[#2C5282] relative overflow-hidden">
-    <div class="absolute inset-0 dots opacity-20"></div>
-    <div class="max-w-6xl mx-auto px-6 relative">
-      <p class="text-xs font-bold uppercase tracking-[.2em] text-[#F6E05E]">Nossa equipe</p>
-      <h2 class="mt-3 serif font-semibold text-3xl lg:text-4xl text-white">As pessoas por trás do portal</h2>
-      <p class="mt-4 text-white/75 max-w-2xl">Uma equipe dedicada que une experiência no varejo de armarinho e cuidado editorial para manter cada conteúdo preciso, claro e útil.</p>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="equipe-cards"></div>
-      <div class="mt-14 max-w-3xl mx-auto text-center">
-        <p class="serif italic text-xl sm:text-2xl text-white leading-relaxed">“Compartilhar conhecimento sobre o artesanato é a nossa maneira de agradecer à comunidade que nos acolhe há mais de duas décadas.”</p>
-        <p class="mt-4 text-sm text-white/60 uppercase tracking-widest font-semibold">Equipe Armarinho São José</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DADOS CADASTRAIS -->
-  <section id="cnpj" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto">
-        <p class="text-xs font-bold uppercase tracking-[.2em] text-[#C85A32]">Transparência</p>
-        <h2 class="mt-3 serif font-semibold text-3xl lg:text-4xl text-slate-900">Quem mantém este portal</h2>
-        <p class="mt-4 text-slate-600">Este portal editorial é mantido pela empresa abaixo, com registro ativo na Receita Federal do Brasil.</p>
-      </div>
-      <div class="mt-12 max-w-4xl mx-auto bg-[#FAF8F5] border border-[#E2DACF] rounded-3xl overflow-hidden shadow-sm">
-        <div class="bg-[#C85A32] px-8 py-6">
-          <h3 class="serif font-bold text-xl text-white">D S J - Londrina Armarinhos Ltda.</h3>
-          <p class="text-white/80 text-sm">Armarinho São José — Matriz</p>
-        </div>
-        <dl class="divide-y divide-[#E2DACF] text-sm">
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Razão Social</dt><dd class="font-semibold text-right">D S J - Londrina Armarinhos Ltda. <button class="copy ml-2 text-slate-400 hover:text-[#C85A32]" data-v="D S J - Londrina Armarinhos Ltda.">⧉</button></dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Nome Fantasia</dt><dd class="font-semibold">Armarinho São José</dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">CNPJ</dt><dd class="font-semibold">04.985.778/0001-58 <button class="copy ml-2 text-slate-400 hover:text-[#C85A32]" data-v="04.985.778/0001-58">⧉</button></dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Inscrição Estadual</dt><dd class="font-semibold">PR 90256440-31</dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Data de Abertura</dt><dd class="font-semibold">08/04/2002</dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Natureza Jurídica</dt><dd class="font-semibold">Sociedade Empresária Limitada</dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Capital Social</dt><dd class="font-semibold">R$ 660.000,00</dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">Situação Cadastral</dt><dd class="font-semibold">Ativa</dd></div>
-          <div class="flex justify-between gap-4 px-8 py-4"><dt class="text-slate-500 font-medium">CNAE Principal</dt><dd class="font-semibold text-right">47.55-5-02 — Comércio varejista de artigos de armarinho</dd></div>
+        <figcaption>Sobre o portal</figcaption>
+      </figure>
+      <div class="quem-txt">
+        <p class="eyebrow rv">Sobre</p>
+        <h2 class="h2 rv d1" style="margin-top:22px">Quem mantém o portal <em>e por quê</em></h2>
+        <p class="rv lead">As dúvidas de quem costura raramente ficam explicadas num lugar só: a numeração da agulha está numa embalagem, a medida do zíper noutra, o lote do fio num rótulo que vai para o lixo. A empresa decidiu manter uma publicação que reúna esses assuntos.</p>
+        <p class="rv">O portal é mantido pela D S J - LONDRINA ARMARINHOS LTDA., nome fantasia Armarinho São José, CNPJ 04.985.778/0001-58, empresa privada aberta em 08/04/2002, cuja atividade principal, conforme a Receita Federal, é o comércio varejista de artigos de armarinho (CNAE 47.55-5-02). A publicação é um projeto editorial dela e funciona separada da atividade comercial: aqui não se vende nem se anuncia mercadoria.</p>
+        <p class="rv">A sede fica na Avenida Rio Branco, 70, no Centro de Londrina (PR). Os textos são escritos a partir do conhecimento técnico de quem lida com aviamentos no dia a dia, e servem para leitores de qualquer cidade.</p>
+        <p class="rv">A leitura é aberta e gratuita. O custo do portal é da própria empresa; ele não veicula anúncio, não recebe patrocínio de fabricante e não vende nada.</p>
+        <p class="rv">Não se divulgam audiência nem número de artigos lidos, porque nenhum desses dados poderia ser comprovado. O que o portal oferece é assinatura, data e correção pública, e o canal para isso é o e-mail da empresa, sem formulário.</p>
+        <dl class="ficha-cnpj rv">
+          <div><dt>Razão social</dt><dd>D S J - Londrina Armarinhos Ltda.</dd></div>
+          <div><dt>Nome fantasia</dt><dd>Armarinho São José</dd></div>
+          <div><dt>CNPJ</dt><dd>04.985.778/0001-58</dd></div>
+          <div><dt>Inscrição Estadual PR</dt><dd>90256440-31</dd></div>
+          <div><dt>Natureza jurídica</dt><dd>Sociedade Empresária Limitada</dd></div>
+          <div><dt>Situação cadastral</dt><dd>Ativa</dd></div>
         </dl>
-        <div class="px-8 py-6 bg-[#FDF6F0] border-t border-[#F0D9C8] flex flex-col sm:flex-row gap-4 sm:justify-between text-sm">
-          <a href="mailto:financeiro@armarinhosaojose.com.br" class="font-semibold text-slate-800 hover:text-[#C85A32]">✉ financeiro@armarinhosaojose.com.br</a>
-          <a href="tel:+554333716400" class="font-semibold text-slate-800 hover:text-[#C85A32]">☎ (43) 3371-6400</a>
-        </div>
       </div>
-      <p class="mt-8 max-w-3xl mx-auto text-center text-sm text-slate-500">🛡 A exibição destes dados tem caráter exclusivamente informativo e de transparência sobre o mantenedor do portal.</p>
     </div>
   </section>
 
-  <!-- POLÍTICA DE PRIVACIDADE -->
-  <section id="privacidade" class="py-24 bg-[#FAF8F5]">
-    <div class="max-w-3xl mx-auto px-6">
-      <p class="text-xs font-bold uppercase tracking-[.2em] text-[#C85A32]">Documento oficial do portal</p>
-      <h2 class="mt-2 serif font-bold text-4xl text-slate-900">Política de Privacidade</h2>
-      <p class="mt-2 text-sm text-slate-500">Última atualização: julho de 2026</p>
-      <div class="mt-8 rounded-2xl border-2 border-[#F6E05E] bg-[#FFF8E7] p-6 text-sm text-[#744210]">
-        <strong>Lembrete:</strong> este portal tem finalidade somente editorial e informativa. Não emitimos documentos, não cobramos taxas, não vendemos peças ou equipamentos e não intermediamos negócios com terceiros.
+  <!-- ============ BLOG ============ -->
+  <section id="leituras" class="sec">
+    <div class="wrap">
+      <p class="eyebrow rv">Blog</p>
+      <h2 class="h2 rv d1" style="margin-top:22px">Últimas <em>leituras</em></h2>
+      <div class="bento">
+        <article class="card grande rv">
+          <div class="ph"><img src="img/maos-costurando.jpg" alt="Mãos costurando à mão um tecido branco com agulha e linha" width="1400" height="933" loading="lazy"></div>
+          <div class="corpo">
+            <h3><a href="blog/linha-e-agulha-na-mesma-medida.html">Linha e agulha na mesma medida: por que a espessura das duas precisa conversar</a></h3>
+            <p>A combinação errada aparece como ponto pulado, linha que arrebenta ou furo no tecido. Entender a lógica da numeração ajuda a escolher sem depender da sorte.</p>
+            <a class="seguir" href="blog/linha-e-agulha-na-mesma-medida.html">Continuar lendo</a>
+          </div>
+        </article>
+        <article class="card menor rv d1">
+          <div class="ph"><img src="img/ziper-dourado.jpg" alt="Zíper dourado de metal costurado em tecido azul, em close" width="1600" height="1067" loading="lazy"></div>
+          <div class="corpo">
+            <h3><a href="blog/qual-ziper-escolher.html">Espiral, metal, invisível ou destacável: qual zíper vai na sua peça?</a></h3>
+            <a class="seguir" href="blog/qual-ziper-escolher.html">Continuar lendo</a>
+          </div>
+        </article>
+        <article class="card menor rv d2">
+          <div class="ph"><img src="img/botoes-e-linhas.jpg" alt="Botões coloridos espalhados sobre a mesa, com carretéis de linha, fita amarela e alfineteiro" width="1600" height="1067" loading="lazy"></div>
+          <div class="corpo">
+            <h3><a href="blog/botao-em-linhas-e-a-casa-certa.html">Botão em “linhas”: como ler a medida e acertar a casa</a></h3>
+            <a class="seguir" href="blog/botao-em-linhas-e-a-casa-certa.html">Continuar lendo</a>
+          </div>
+        </article>
       </div>
-      <div class="mt-10 space-y-6" id="politica"></div>
+      <p class="nota-leit rv">A leitura mais extensa daqui é <a href="blog/guia-do-armarinho-para-quem-comeca.html">Guia do armarinho para quem começa a costurar em casa</a>, que junta linhas, aviamentos e organização num único roteiro.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section id="contato" class="sec sobre">
+    <div class="wrap">
+      <p class="eyebrow rv">Contato</p>
+      <h2 class="h2 rv d1" style="margin-top:22px">Onde encontrar <em>a redação</em></h2>
+      <div class="contatos">
+        <div class="ficha rv"><h3>E-mail</h3><p><a href="mailto:financeiro@armarinhosaojose.com.br">financeiro@armarinhosaojose.com.br</a></p></div>
+        <div class="ficha rv d1"><h3>Telefone</h3><p><a href="tel:+554333716400">(43) 3371-6400</a></p></div>
+        <div class="ficha rv d2"><h3>Endereço</h3><p>Avenida Rio Branco, 70, Centro, Londrina/PR, CEP 86070-010</p></div>
+        <div class="ficha rv d3"><h3>Mantenedora</h3><p>D S J - LONDRINA ARMARINHOS LTDA., CNPJ 04.985.778/0001-58</p></div>
+        <div class="sem-form rv"><p>Não se preenche formulário, não se cria cadastro nem se faz login: o portal não pede dado nenhum ao leitor. Quem quiser apontar um erro ou propor um assunto escreve para o e-mail da empresa. Quem procura compra, reserva ou orçamento não encontra atendimento por aqui.</p></div>
+      </div>
     </div>
   </section>
 </main>
 
-<!-- RODAPÉ -->
-<footer class="bg-slate-900 text-slate-300">
-  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
-    <div>
-      <p class="serif font-bold text-lg text-white">Armarinho São José</p>
-      <p class="text-[10px] uppercase tracking-[.2em] text-[#C85A32] font-semibold">Portal Editorial</p>
-      <p class="mt-5 text-sm text-slate-400 leading-relaxed">Portal com finalidade somente editorial e informativa. Não emite documentos, não cobra taxas, não vende peças ou equipamentos e não intermedeia negócios com terceiros.</p>
+<!-- ============ RODAPÉ + POLÍTICA — FIM ============ -->
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-top">
+      <a class="marca" href="#abertura" aria-label="Ponto Corrido">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1b1915" stroke="rgba(217,164,65,.4)"/><path d="M12 44c8-10 14 6 22-4s12-16 18-20" fill="none" stroke="#e4572e" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="5 5"/><path d="M48 12 20 50" stroke="#d9a441" stroke-width="3.4" stroke-linecap="round"/><ellipse cx="46" cy="15" rx="1.6" ry="3.4" transform="rotate(37 46 15)" fill="#1b1915"/></svg>
+        <span class="wm">Ponto <em>Corrido</em></span>
+      </a>
+      <nav class="rodape-nav" aria-label="Navegação do rodapé">
+        <a href="#temas">Temas</a>
+        <a href="#checklist">Checklist</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>
+      </nav>
     </div>
-    <div>
-      <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Navegação</h4>
-      <ul class="mt-5 space-y-3 text-sm">
-        <li><a href="#sobre" class="hover:text-[#C85A32]">Sobre o portal</a></li>
-        <li><a href="#conteudos" class="hover:text-[#C85A32]">Conteúdos editoriais</a></li>
-        <li><a href="#equipe" class="hover:text-[#C85A32]">Nossa equipe</a></li>
-        <li><a href="#cnpj" class="hover:text-[#C85A32]">Dados cadastrais</a></li>
-        <li><a href="#privacidade" class="hover:text-[#C85A32]">Política de Privacidade</a></li>
-      </ul>
+    <div class="rodape-faixa">
+      <span class="sinal" aria-hidden="true">!</span>
+      <p>CNPJ 04.985.778/0001-58. Publicação mantida por empresa privada do comércio varejista de artigos de armarinho (CNAE 47.55-5-02), com finalidade somente editorial e informativa. Nada neste portal vende produto, reserva mercadoria, faz orçamento, cobra taxa nem intermedeia negócio com terceiros. Os detalhes sobre dados e cookies estão na <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
     </div>
-    <div>
-      <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Contato institucional</h4>
-      <ul class="mt-5 space-y-3 text-sm">
-        <li>📍 Avenida Rio Branco, 70 — Centro<br>Londrina — PR — CEP 86070-010</li>
-        <li><a href="mailto:financeiro@armarinhosaojose.com.br" class="hover:text-[#C85A32]">✉ financeiro@armarinhosaojose.com.br</a></li>
-        <li><a href="tel:+554333716400" class="hover:text-[#C85A32]">☎ (43) 3371-6400</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-500">
-      <p>Mantido por <strong class="text-slate-300">D S J - Londrina Armarinhos Ltda.</strong> — CNPJ 04.985.778/0001-58</p>
-      <p>© 2026 Armarinho São José. Conteúdo editorial e informativo.</p>
-    </div>
+    <p class="direitos"><span>Ponto Corrido — caderno editorial independente de armarinho</span><span>Londrina · Paraná · Brasil</span></p>
   </div>
 </footer>
 
+<!-- ============ AVISO DE COOKIES ============ -->
+<input type="checkbox" id="aviso-ok" class="aviso-chk">
+<div class="aviso" role="region" aria-label="Aviso sobre cookies">
+  <p>Este aviso é só informativo: o site não grava cookie, não mede audiência e não exibe publicidade. Fechar o aviso não salva nada no navegador, por isso ele pode reaparecer em outra página. Os detalhes estão na <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+  <label for="aviso-ok">Fechar aviso</label>
+</div>
+
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 <script>
-const CONTEUDOS=[
- {c:"Crochê",t:"Guia de fios e agulhas para crochê",d:"Entenda a diferença entre fios de algodão, barbantes e agulhas de aço para escolher o material certo para cada ponto.",i:"https://images.unsplash.com/photo-1578353022142-09264fd64295?q=85&w=800&auto=format&fit=crop"},
- {c:"Tricô",t:"Lãs e linhas: como ler os rótulos",d:"Tex, metragem e composição: um panorama informativo para interpretar as informações dos novelos antes de tricotar.",i:"https://images.unsplash.com/photo-1618574760337-2750f6251d20?q=85&w=800&auto=format&fit=crop"},
- {c:"Bordado",t:"Bordado livre: pontos clássicos",d:"Ponto cheio, haste e atrás: conheça a história e a aplicação dos pontos mais tradicionais do bordado brasileiro.",i:"https://images.unsplash.com/photo-1671535108620-d169ce916f09?q=85&w=800&auto=format&fit=crop"},
- {c:"Costura",t:"Tecidos planos: algodão, tricoline e linho",d:"Um guia editorial sobre gramaturas, caimento e os usos mais comuns de cada tecido no vestuário e na decoração.",i:"https://images.pexels.com/photos/6461522/pexels-photo-6461522.jpeg?auto=compress&cs=tinysrgb&w=800"},
- {c:"Amigurumi",t:"Amigurumi: a arte dos bichinhos de crochê",d:"Origem japonesa, materiais habituais e dicas de leitura de receitas para quem está começando na técnica.",i:"https://images.unsplash.com/photo-1618574760337-2750f6251d20?q=85&w=800&auto=format&fit=crop"},
- {c:"Macramê",t:"Macramê: nós, cordões e texturas",d:"Do painel decorativo às plantas suspensas: os nós fundamentais e os tipos de cordão usados na técnica.",i:"https://images.pexels.com/photos/37397519/pexels-photo-37397519.jpeg?auto=compress&cs=tinysrgb&w=800"}
-];
-const EQUIPE=[
- {i:"CE",n:"Curadoria Editorial",c:"Conteúdo e Guias",b:"Equipe responsável por pesquisar, escrever e revisar todos os guias informativos publicados no portal."},
- {i:"AT",n:"Atendimento Institucional",c:"Relacionamento",b:"Canal que recebe dúvidas sobre os conteúdos e orienta os leitores sobre a natureza informativa do portal."},
- {i:"ET",n:"Especialistas em Têxteis",c:"Consultoria Técnica",b:"Profissionais com décadas de vivência em armarinho que validam as informações técnicas."},
- {i:"AJ",n:"Assessoria Jurídica",c:"Conformidade e LGPD",b:"Garante a conformidade com a LGPD e uma comunicação editorial transparente e responsável."}
-];
-const POLITICA=[
- ["1. Quem somos","Este portal é mantido por D S J - Londrina Armarinhos Ltda., pessoa jurídica de direito privado, inscrita no CNPJ sob o nº 04.985.778/0001-58, Inscrição Estadual PR 90256440-31, com sede na Avenida Rio Branco, 70 — Centro, Londrina — PR, CEP 86070-010. O portal tem finalidade somente editorial e informativa: não emite documentos, não cobra taxas, não vende peças ou equipamentos e não intermedeia negócios com terceiros."],
- ["2. Quais dados coletamos","Por se tratar de um portal exclusivamente informativo, não exigimos cadastro, login ou fornecimento de dados pessoais para navegação. Podemos coletar automaticamente dados técnicos de acesso (endereço IP, navegador, páginas visitadas e horário) apenas para fins estatísticos e de segurança. Caso você entre em contato pelo e-mail institucional, trataremos os dados fornecidos somente para responder à sua mensagem."],
- ["3. Finalidade do tratamento","Os dados eventualmente coletados são utilizados para: (a) garantir a segurança e o bom funcionamento do portal; (b) produzir estatísticas anonimizadas de audiência; e (c) responder a mensagens enviadas voluntariamente. Não utilizamos dados pessoais para fins comerciais, publicitários ou de venda a terceiros."],
- ["4. Base legal (LGPD)","O tratamento observa a Lei nº 13.709/2018 (LGPD), com fundamento no legítimo interesse (art. 7º, IX) para estatísticas e segurança, e no consentimento (art. 7º, I) quando houver contato voluntário por e-mail."],
- ["5. Cookies","Este portal pode utilizar cookies estritamente necessários ao funcionamento técnico. Não utilizamos cookies de rastreamento publicitário. Você pode configurar seu navegador para recusar cookies sem prejuízo à leitura dos conteúdos."],
- ["6. Compartilhamento de dados","Não vendemos, alugamos ou compartilhamos dados pessoais com terceiros para fins comerciais. Dados poderão ser compartilhados apenas quando exigido por lei, ordem judicial ou autoridade competente."],
- ["7. Direitos do titular","Nos termos da LGPD, você pode solicitar confirmação, acesso, correção, anonimização, portabilidade ou eliminação dos seus dados, bem como revogar consentimento. Escreva para financeiro@armarinhosaojose.com.br ou ligue para (43) 3371-6400."],
- ["8. Segurança e retenção","Adotamos medidas técnicas e administrativas razoáveis para proteger os dados contra acessos não autorizados, perda ou alteração, retendo-os somente pelo período necessário."],
- ["9. Links para sites de terceiros","O portal pode conter referências a conteúdos externos com fins puramente informativos. Não nos responsabilizamos pelas práticas de sites de terceiros, e nenhuma referência constitui intermediação comercial."],
- ["10. Alterações desta política","Esta política pode ser atualizada periodicamente. A versão vigente estará sempre disponível nesta página, com a data de atualização indicada."],
- ["11. Contato e encarregado","Dúvidas sobre esta política: financeiro@armarinhosaojose.com.br | (43) 3371-6400. Correspondência: Armarinho São José — D S J - Londrina Armarinhos Ltda., Avenida Rio Branco, 70 — Centro, Londrina — PR, CEP 86070-010."]
-];
-const cats=["Todos",...new Set(CONTEUDOS.map(x=>x.c))];
-let cat="Todos",busca="";
-const tabsEl=document.getElementById("tabs"),cardsEl=document.getElementById("cards");
-cats.forEach(c=>{const b=document.createElement("button");b.textContent=c;b.className="tab px-4 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 border border-[#E2DACF] hover:text-[#C85A32] transition"+(c==="Todos"?" ativo":"");b.onclick=()=>{cat=c;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("ativo",t.textContent===c));render()};tabsEl.appendChild(b)});
-document.getElementById("busca").oninput=e=>{busca=e.target.value.toLowerCase();render()};
-function render(){const f=CONTEUDOS.filter(x=>(cat==="Todos"||x.c===cat)&&(x.t+x.d).toLowerCase().includes(busca));
- document.getElementById("vazio").classList.toggle("hidden",f.length>0);
- cardsEl.innerHTML=f.map(x=>`<article class="card bg-white rounded-2xl overflow-hidden border border-[#E2DACF] shadow-sm">
-  <div class="overflow-hidden aspect-[16/10]"><img src="${x.i}" alt="${x.t}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
-  <div class="p-6"><span class="text-[11px] font-bold uppercase tracking-[.18em] text-[#C85A32]">${x.c}</span>
-  <h3 class="mt-2 serif font-semibold text-lg text-slate-900 leading-snug">${x.t}</h3>
-  <p class="mt-2 text-sm text-slate-500 leading-relaxed">${x.d}</p>
-  <p class="mt-4 text-xs font-semibold text-[#2C5282]">📖 Conteúdo informativo</p></div></article>`).join("")}
-render();
-document.getElementById("equipe-cards").innerHTML=EQUIPE.map(m=>`<div class="bg-white/10 backdrop-blur border border-white/15 rounded-2xl p-6 hover:bg-white/15 transition">
- <span class="w-14 h-14 rounded-full bg-[#C85A32] text-white serif font-bold text-lg flex items-center justify-center shadow-lg">${m.i}</span>
- <h3 class="mt-5 font-semibold text-white">${m.n}</h3><p class="text-xs font-semibold uppercase tracking-wider text-[#F6E05E] mt-1">${m.c}</p>
- <p class="mt-3 text-sm text-white/70 leading-relaxed">${m.b}</p></div>`).join("");
-document.getElementById("politica").innerHTML=POLITICA.map(s=>`<section class="bg-white rounded-2xl border border-[#E2DACF] p-7 shadow-sm">
- <h3 class="serif font-semibold text-xl text-slate-900">${s[0]}</h3><p class="mt-3 text-slate-600 leading-relaxed text-[15px]">${s[1]}</p></section>`).join("");
-document.querySelectorAll(".copy").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.v);b.textContent="✓";setTimeout(()=>b.textContent="⧉",1500)}catch(e){}});
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lenis = null;
+  if (!reduce && typeof Lenis !== 'undefined') {
+    lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    var raf = function(t){ lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  }
+  var menu = document.querySelector('.menu-btn');
+  var nav = document.querySelector('.nav');
+  if (menu && nav) {
+    menu.addEventListener('click', function(){
+      var on = nav.classList.toggle('aberta');
+      menu.setAttribute('aria-expanded', on);
+      menu.textContent = on ? 'Fechar' : 'Menu';
+    });
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var alvo = document.querySelector(id);
+      if (!alvo) return;
+      e.preventDefault();
+      if (nav) nav.classList.remove('aberta');
+      if (menu) menu.textContent = 'Menu';
+      if (lenis) lenis.scrollTo(alvo, { offset: -84 });
+      else alvo.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  var rvs = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+    rvs.forEach(function(el){ io.observe(el); });
+  } else {
+    rvs.forEach(function(el){ el.classList.add('on'); });
+  }
+  var parEls = Array.prototype.slice.call(document.querySelectorAll('[data-par]'));
+  function parallax(){
+    var vh = window.innerHeight;
+    parEls.forEach(function(el){
+      var r = el.parentElement.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > vh + 80) return;
+      var p = parseFloat(el.getAttribute('data-par')) || 0.1;
+      var y = (r.top + r.height / 2 - vh / 2) * p * -1;
+      el.style.transform = 'translateY(' + y.toFixed(1) + 'px)';
+    });
+  }
+  if (!reduce) {
+    if (lenis) lenis.on('scroll', parallax);
+    window.addEventListener('scroll', parallax, { passive: true });
+    window.addEventListener('resize', parallax);
+    parallax();
+  }
+  var stage = document.getElementById('stage');
+  var fig = document.getElementById('paisagem');
+  if (stage && fig && !reduce && window.matchMedia('(pointer:fine)').matches) {
+    stage.addEventListener('pointermove', function(e){
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      fig.style.setProperty('--ry', (x * 4).toFixed(2) + 'deg');
+      fig.style.setProperty('--rx', (y * -4).toFixed(2) + 'deg');
+    });
+    stage.addEventListener('pointerleave', function(){
+      fig.style.setProperty('--rx', '0deg');
+      fig.style.setProperty('--ry', '0deg');
+    });
+  }
+  var lista = document.getElementById('conferir');
+  var cnt = document.getElementById('cnt');
+  var bar = document.getElementById('bar');
+  if (lista && cnt && bar) {
+    lista.addEventListener('change', function(){
+      var total = lista.querySelectorAll('input[type="checkbox"]').length;
+      var feitos = lista.querySelectorAll('input[type="checkbox"]:checked').length;
+      cnt.textContent = feitos;
+      bar.style.width = (feitos / total * 100) + '%';
+    });
+  }
+})();
 </script>
 </body>
 </html>
